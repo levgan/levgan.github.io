@@ -9,9 +9,12 @@
     <!-- <pre id="testing">edited ...</pre> -->
     <!-- <pre id="readout">Waiting for data...</pre> -->
     <div id="main"></div>
-<script>
+
+    <script>
         window.onerror = (message) => alert(String(message));
-        // await grist.GristView.allowSelectBy();
+        ready(async () => {
+            await grist.viewApi.allowSelectBy();
+        });
         grist.ready({columns: ['ID1', 'ID2'], requiredAccess: 'read table'});
         grist.onRecords(function(records, mappings) {
             // document.getElementById('readout').innerHTML = JSON.stringify(records, null, 2);
