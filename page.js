@@ -22,7 +22,7 @@ function getGristOptions() {
       name: "id1",
       title: "ID 1",
       optional: false,
-      type: "Any",
+      type: "Numeric",
       description: "",
       allowMultiple: false
     },
@@ -30,7 +30,7 @@ function getGristOptions() {
         name: "id2",
         title: "ID 2",
         optional: false,
-        type: "Any",
+        type: "Numeric",
         description: "",
         allowMultiple: false
       }
@@ -75,6 +75,7 @@ async function gristTableChanged(records, mappings) {
   const mappedRecords = grist.mapColumnNames(records, mappings);
   // if any records were successfully mapped, create or update them in the view
   if (mappedRecords) {
+    console.log(mappedRecords);
     const colTypes = await colTypesFetcher.getColTypes();
     // const CalendarEventObjects = mappedRecords.filter(isRecordValid).map(r => buildCalendarEventObject(r, colTypes));
     // await calendarHandler.updateCalendarEvents(CalendarEventObjects);
@@ -83,12 +84,14 @@ async function gristTableChanged(records, mappings) {
     str1 += "<br><br><table border='1'>";
     for ( var i = 0; i < records.length; i++) {
         var record = records[i];
+        /*
         const mapped = grist.mapColumnNames(record);
         if (!mapped) {
             return;
         }
+        */
         str1 += "<tr>";
-        str1 += `<td> ${mapped.ID1} </td><td> ${mapped.ID2} </td>`;
+        str1 += `<td> ${mappedRecords.id1} </td><td> ${mappedRecords.id2} </td>`;
         str1 += "</tr>";
     }
     str1 += "</table></div>";
