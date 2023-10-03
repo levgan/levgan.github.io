@@ -6,21 +6,21 @@
     <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
   </head>
   <body>
-    <pre id="testing">edited ...</pre>
-    <pre id="readout">Waiting for data...</pre>
+    <!-- <pre id="testing">edited ...</pre> -->
+    <!-- <pre id="readout">Waiting for data...</pre> -->
     <script>
         grist.ready({columns: ['ID1', 'ID2'], requiredAccess: 'read table'});
         grist.onRecords(function(records, mappings) {
+            const mapped = grist.mapColumnNames(records);
+            if (!mapped) {
+                return;
+            }
             // document.getElementById('readout').innerHTML = JSON.stringify(records, null, 2);
             document.writeln("<br><br><div align='center'>loop w mapped props..");
             document.writeln("<br><br><table border='1'>");
             var i = 0;
             for ( var i = 0; i < records.length; i++) {
                 var record = records[i];
-                const mapped = grist.mapColumnNames(record);
-                if (!mapped) {
-                    return;
-                }
                 document.writeln("<tr>");
                 document.writeln("<td>" + mapped.ID1 + "</td>" + "<td>" + mapped.ID2 + "</td>");
                 document.writeln("</tr>");
