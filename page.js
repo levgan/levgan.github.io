@@ -91,7 +91,7 @@ async function gristTableChanged(records, mappings) {
         }
         */
         str1 += "<tr>";
-        str1 += `<td> ${mappedRecords.id1} </td><td> ${mappedRecords.id2} </td>`;
+        str1 += `<td> ${mappedRecords[i].id1} </td><td> ${mappedRecords[i].id2} </td>`;
         str1 += "</tr>";
     }
     str1 += "</table></div>";
