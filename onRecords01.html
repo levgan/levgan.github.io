@@ -9,7 +9,6 @@
     <pre id="testing">edited ...</pre>
     <pre id="readout">Waiting for data...</pre>
     <script>
-        await grist.allowSelectBy();
         grist.ready({columns: ['ID1', 'ID2'], requiredAccess: 'read table'});
         grist.onRecords(function(records, mappings) {
             // document.getElementById('readout').innerHTML = JSON.stringify(records, null, 2);
@@ -28,6 +27,7 @@
             }
             document.writeln("</table></div>");
         });
+        await grist.allowSelectBy();
     </script>
   </body>
 </html> 
