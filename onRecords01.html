@@ -12,6 +12,7 @@
         grist.onRecords(function(records) {
             document.getElementById('readout').innerHTML = JSON.stringify(records, null, 2);
             var i = 0;
+            console.log("records.length: " + records.length);
             for ( var i = 0; i < records.length; i++) {
                 var obj1 = records[i];
                 console.log(obj1);
