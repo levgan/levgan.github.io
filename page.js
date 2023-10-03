@@ -22,7 +22,7 @@ function getGristOptions() {
       name: "id1",
       title: "ID 1",
       optional: false,
-      type: "Reference",
+      type: "Any",
       description: "",
       allowMultiple: false
     },
@@ -30,7 +30,7 @@ function getGristOptions() {
         name: "id2",
         title: "ID 2",
         optional: false,
-        type: "Reference",
+        type: "Any",
         description: "",
         allowMultiple: false
       }
