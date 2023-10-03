@@ -12,7 +12,7 @@
         grist.ready({columns: ['ID1', 'Name1', 'ID2', 'Name2'], requiredAccess: 'read table'});
         grist.onRecords(function(records, mappings) {
             document.getElementById('readout').innerHTML = JSON.stringify(records, null, 2);
-
+            console.log("why the delay...");
             document.writeln("<br><br><div align='center'>loop w  Custom Props");
             document.writeln("<br><br><table border='1'>");
             var i = 0;
