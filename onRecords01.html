@@ -12,6 +12,37 @@
       grist.onRecords(function(records) {
         document.getElementById('readout').innerHTML = JSON.stringify(records, null, 2);
       });
+
+        var graph = {
+            "sparkData" : [ {
+                "one" : [ 97, 5, 69, 35, 28, 52, 51, 55 ]
+            }, {
+                "two" : [ 96, 63, 18, 55, 13, 47, 77, 64 ]
+            }, {
+                "three" : [ 94, 75, 83, 44, 43, 86, 68, 26 ]
+            } ]
+        }
+        var i = 0;
+        document.writeln("<br><br><div align='center'>Here is a HTML output from JSON Array..");
+        document.writeln("<br><br><table border='1'><tr>");
+        for ( var i = 0; i < graph.sparkData.length; i++) {
+            var obj = graph.sparkData[i];
+            console.log(obj);
+            var crunchifyName;
+            var crunchifyValue;
+            document.writeln("<td>");
+            document.writeln("<table border='0'  width=100 >");
+            for ( var key in obj) {
+                crunchifyName = key;
+                crunchifyValue = obj[key].toString();
+                +document.writeln("<tr><td><B>" + crunchifyName
+                        + ":  </B></td><td width=50>" + crunchifyValue
+                        + "</td></tr>");
+                document.writeln("</table>");
+                document.writeln("</td>");
+            }
+        }
+        document.writeln("</tr></table></div>");
     </script>
   </body>
 </html>
