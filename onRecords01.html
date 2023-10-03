@@ -8,10 +8,16 @@
   <body>
     <pre id="readout">Waiting for data...</pre>
     <script>
-      grist.ready();
-      grist.onRecords(function(records) {
-        document.getElementById('readout').innerHTML = JSON.stringify(records, null, 2);
-      });
+        grist.ready();
+        grist.onRecords(function(records) {
+            document.getElementById('readout').innerHTML = JSON.stringify(records, null, 2);
+            var i = 0;
+            for ( var i = 0; i < records.length; i++) {
+                var obj1 = records[i];
+                console.log(obj1);
+            }
+
+        });
 
         var graph = {
             "sparkData" : [ {
