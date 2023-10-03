@@ -19,7 +19,7 @@ ready(async () => {
 function getGristOptions() {
   return [
     {
-      name: "id1",
+      name: "tsk1",
       title: "ID 1",
       optional: false,
       type: "Ref",
@@ -27,7 +27,7 @@ function getGristOptions() {
       allowMultiple: false
     },
     {
-        name: "id2",
+        name: "tsk2",
         title: "ID 2",
         optional: false,
         type: "Ref",
@@ -98,7 +98,7 @@ async function gristTableChanged(records, mappings) {
         }
         */
         str1 += "<tr>";
-        str1 += `<td> ${mappedRecords[i].id1} </td><td> ${mappedRecords[i].id2} </td>`;
+        str1 += `<td> ${mappedRecords[i].tsk1} </td><td> ${mappedRecords[i].tsk2} </td>`;
         str1 += "</tr>";
     }
     str1 += "</table></div>";
@@ -139,8 +139,8 @@ class ColTypesFetcher {
   gotMappings(mappings) {
     // Can't fetch metadata when no full access.
     if (this._accessLevel !== 'full') { return; }
-    if (!this._colIds || !(mappings.id1 === this._colIds[0] && mappings.id2 === this._colIds[1])) {
-      this._colIds = [mappings.id1, mappings.id2];
+    if (!this._colIds || !(mappings.tsk1 === this._colIds[0] && mappings.tsk2 === this._colIds[1])) {
+      this._colIds = [mappings.tsk1, mappings.tsk2];
       if (this._tableId) {
         this._colTypesPromise = ColTypesFetcher.getTypes(this._tableId, this._colIds);
       }
