@@ -10,6 +10,7 @@
     <!-- <pre id="readout">Waiting for data...</pre> -->
     <div id="main"></div>
 <script>
+        await grist.GristView.allowSelectBy();
         grist.ready({columns: ['ID1', 'ID2'], requiredAccess: 'read table'});
         grist.onRecords(function(records, mappings) {
             // document.getElementById('readout').innerHTML = JSON.stringify(records, null, 2);
@@ -22,13 +23,12 @@
                     return;
                 }
                 str1 += "<tr>";
-                str1 += "<td>" + mapped.ID1 + "</td>" + "<td>" + mapped.ID2 + "</td>";
+                str1 += "<td> ${mapped.ID1} </td><td> ${mapped.ID2} </td>";
                 str1 += "</tr>";
             }
             str1 += "</table></div>";
             document.getElementById('main').innerHTML = str1; 
         });
-        // await grist.allowSelectBy();
     </script>
   </body>
 </html> 
