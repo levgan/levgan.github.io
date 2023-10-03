@@ -10,10 +10,10 @@
     <pre id="readout">Waiting for data...</pre>
     <script>
         grist.ready({columns: ['ID1', 'Name1', 'ID2', 'Name2'], requiredAccess: 'read table'});
+        grist.allowSelectBy();
         grist.onRecords(function(records, mappings) {
-            document.getElementById('readout').innerHTML = JSON.stringify(records, null, 2);
-            console.log("why the delay...");
-            document.writeln("<br><br><div align='center'>loop w  Custom Props");
+            // document.getElementById('readout').innerHTML = JSON.stringify(records, null, 2);
+            document.writeln("<br><br><div align='center'>loop w mapped props..");
             document.writeln("<br><br><table border='1'>");
             var i = 0;
             for ( var i = 0; i < records.length; i++) {
@@ -23,8 +23,7 @@
                     return;
                 }
                 document.writeln("<tr>");
-                document.writeln("<td>" + mapped.ID1 + "</td>" + "<td>" + mapped.Name1 + "</td>"
-                    + "<td>" + mapped.ID2 + "</td>" + "<td>" + mapped.Name2 + "</td>");
+                document.writeln("<td>" + mapped.ID1 + "</td>" + "<td>" + mapped.ID2 + "</td>");
                 document.writeln("</tr>");
             }
             document.writeln("</table></div>");
