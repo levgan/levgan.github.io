@@ -75,7 +75,6 @@ async function gristTableChanged(records, mappings) {
   const mappedRecords = grist.mapColumnNames(records, mappings);
   // if any records were successfully mapped, create or update them in the view
   if (mappedRecords) {
-    console.log(mappedRecords);
     const colTypes = await colTypesFetcher.getColTypes();
     // const CalendarEventObjects = mappedRecords.filter(isRecordValid).map(r => buildCalendarEventObject(r, colTypes));
     // await calendarHandler.updateCalendarEvents(CalendarEventObjects);
