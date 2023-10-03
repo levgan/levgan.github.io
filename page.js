@@ -87,7 +87,7 @@ async function gristTableChanged(records, mappings) {
     // const CalendarEventObjects = mappedRecords.filter(isRecordValid).map(r => buildCalendarEventObject(r, colTypes));
     // await calendarHandler.updateCalendarEvents(CalendarEventObjects);
 
-    var str1 = "<br><br><div align='center'>testing..";
+    var str1 = "<br><br><div align='center'>testing...";
     str1 += "<br><br><table border='1'>";
     for ( var i = 0; i < records.length; i++) {
         var record = records[i];
