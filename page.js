@@ -57,6 +57,9 @@ async function configureGristSettings() {
   // bind columns mapping options to the GUI
   const columnsMappingOptions = getGristOptions();
   grist.ready({ requiredAccess: 'full', columns: columnsMappingOptions, allowSelectBy: true });
+
+  await grist.setCursorPos({rowId: 1});
+
 }
 
 // When a user selects a record in the table, we want to select it on the view
