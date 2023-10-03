@@ -22,7 +22,7 @@ function getGristOptions() {
       name: "id1",
       title: "ID 1",
       optional: false,
-      type: "Any",
+      type: "Ref",
       description: "",
       allowMultiple: false
     },
@@ -30,7 +30,7 @@ function getGristOptions() {
         name: "id2",
         title: "ID 2",
         optional: false,
-        type: "Any",
+        type: "Ref",
         description: "",
         allowMultiple: false
       }
@@ -68,6 +68,14 @@ async function gristSelectedRecordChanged(record, mappings) {
   }
   */
 }
+
+/*  BIND CLICK EVENT TO CHANGE GRIST CURSOR POSITION AND FIRE LINKING TABLES WITH ONRECORD()
+    this.calendar.on('clickEvent', async (info) => {
+      await grist.setCursorPos({rowId: info.event.id});
+    });
+*/
+
+
 
 // when some CRUD operation is performed on the table, we want to update the calendar
 async function gristTableChanged(records, mappings) {
