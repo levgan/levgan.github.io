@@ -12,11 +12,13 @@
 
     <script>
         window.onerror = (message) => alert(String(message));
+        /*
         ready(async () => {
             await grist.viewApi.allowSelectBy();
             console.log("we here");
         });
-        grist.ready({columns: ['ID1', 'ID2'], requiredAccess: 'read table'});
+        */
+        grist.ready({requiredAccess: 'full', columns: ['ID1', 'ID2'], allowSelectBy: true});
         grist.onRecords(function(records, mappings) {
             // document.getElementById('readout').innerHTML = JSON.stringify(records, null, 2);
             var str1 = "<br><br><div align='center'>testing..";
