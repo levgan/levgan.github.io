@@ -1,5 +1,12 @@
 var data1 = getTreeData2();
 
+async function updConfig (d) {
+    const  selID =  { id1: 5, B: d };
+    const table = await grist.getTable('z_config');
+    await table.update(selID);
+}
+
+
 function initD3c() {
 
     // Specify the charts’ dimensions. The height is variable, depending on the layout.
@@ -88,6 +95,7 @@ function initD3c() {
             .on("click", function (event, d) { 
                 event.stopPropagation();
                 console.log(d.data.name);
+                updConfig(d.data.name);
             })
             // .on("click", function(d) {
             //     // d3.event.stopPropagation();
