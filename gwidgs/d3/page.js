@@ -108,7 +108,7 @@ function initD3b() {
   const nodeSize = 17;
   const root = d3.hierarchy(data1).eachBefore((i => d => d.index = i++)(0));
   const nodes = root.descendants();
-  const width = 928;
+  const width = 500;
   const height = (nodes.length + 1) * nodeSize;
 
   const columns = [
