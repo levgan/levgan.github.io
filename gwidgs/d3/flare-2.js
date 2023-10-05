@@ -89,7 +89,7 @@ function initD3c() {
             //     // d3.event.stopPropagation();
             //     console.log(d.data); 
             //   })
-            .text(d => d.data.name)
+            .text(d => d.data.name + "TEST")
             .clone(true).lower()
             .attr("stroke-linejoin", "round")
             .attr("stroke-width", 3)
