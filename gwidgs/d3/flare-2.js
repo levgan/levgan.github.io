@@ -1,4 +1,4 @@
-var data1 = getTreeData2();
+var data1 = getTreeData3();
 
 async function updConfig (d) {
     const table2 = await grist.getTable();
@@ -742,4 +742,24 @@ function getTreeData2() {
      }
     ]
    };
+}
+
+function getTreeData3() {
+    return {
+        name: "flare",
+        children: [
+            { name: 'fruits', children: [
+                { name: 'apples', children: [] },
+                { name: 'oranges', children: [
+                    { name: 'tangerines', children: [] },
+                    { name: 'mandarins', children: [] },
+                    { name: 'pomelo', children: [] },
+                    { name: 'blood orange', children: [] },
+                ] }
+            ]},
+            { name: 'vegetables', children: [
+                { name: 'brocolli', children: [] },
+            ] },
+        ]
+    };
 }
