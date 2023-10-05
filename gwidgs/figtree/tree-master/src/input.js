@@ -1,5 +1,5 @@
-import * as utils from './utils'
-import { Indicator } from './indicator'
+import * as utils from './utils.js'
+import { Indicator } from './indicator.js'
 
 export class Input {
     constructor(tree) {
