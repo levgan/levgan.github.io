@@ -100,7 +100,7 @@ function initD3c() {
             .on("click", function (event, d) { 
                 event.stopPropagation();
                 console.log(d.data.name);
-                await updConfig(d.data.name);
+                updConfig(d.data.name);
             })
             // .on("click", function(d) {
             //     // d3.event.stopPropagation();
