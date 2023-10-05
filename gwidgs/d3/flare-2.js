@@ -85,7 +85,7 @@ function initD3c() {
             .attr("dy", "0.31em")
             .attr("x", d => d._children ? -6 : 6)
             .attr("text-anchor", d => d._children ? "end" : "start")
-            .on("click", (event, d) => { 
+            .on("click", function (event, d) { 
                 d3.event.stopPropagation();
                 console.log(d.data.name);
             })
