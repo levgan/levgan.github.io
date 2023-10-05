@@ -3,7 +3,8 @@ var data1 = getTreeData2();
 function initD3c() {
 
     // Specify the charts’ dimensions. The height is variable, depending on the layout.
-    const width = 928;
+    const width = 100;
+    const widthper = "100%";
     const marginTop = 10;
     const marginRight = 10;
     const marginBottom = 10;
@@ -22,9 +23,9 @@ function initD3c() {
 
     // Create the SVG container, a layer for the links and a layer for the nodes.
     const svg = d3.create("svg")
-        .attr("width", width)
+        .attr("width", widthper)
         .attr("height", dx)
-        .attr("viewBox", [-marginLeft, -marginTop, width, dx])
+        .attr("viewBox", [-marginLeft, -marginTop, widthper, dx])
         .attr("style", "max-width: 100%; height: auto; font: 10px sans-serif; user-select: none;");
 
     const gLink = svg.append("g")
@@ -57,7 +58,7 @@ function initD3c() {
         const transition = svg.transition()
             .duration(duration)
             .attr("height", height)
-            .attr("viewBox", [-marginLeft, left.x - marginTop, width, height])
+            .attr("viewBox", [-marginLeft, left.x - marginTop, widthper, height])
             .tween("resize", window.ResizeObserver ? null : () => () => svg.dispatch("toggle"));
 
         // Update the nodes…
