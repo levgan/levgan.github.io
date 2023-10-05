@@ -109,7 +109,7 @@ function initD3b() {
   const nodes = root.descendants();
   const width = 928;
   const height = (nodes.length + 1) * nodeSize;
-  const data1 = getTreeData1();
+  var data1 = getTreeData1();
 
   const columns = [
     {
