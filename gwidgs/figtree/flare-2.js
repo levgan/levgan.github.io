@@ -762,6 +762,35 @@ function getTreeData3() {
             { name: 'vegetables', children: [
                 { name: 'brocolli', children: [] },
             ] },
+            { "name": "analytics",
+                "children": [
+                 {
+                  "name": "cluster",
+                  "children": [
+                   {"name": "AgglomerativeCluster", "value": 3938, children: [] },
+                   {"name": "CommunityStructure", "value": 3812, children: [] },
+                   {"name": "HierarchicalCluster", "value": 6714, children: [] },
+                   {"name": "MergeEdge", "value": 743, children: [] }
+                  ]
+                 },
+                 {
+                  "name": "graph",
+                  "children": [
+                   {"name": "BetweennessCentrality", "value": 3534, children: [] },
+                   {"name": "LinkDistance", "value": 5731, children: [] },
+                   {"name": "MaxFlowMinCut", "value": 7840, children: [] },
+                   {"name": "ShortestPaths", "value": 5914, children: [] },
+                   {"name": "SpanningTree", "value": 3416, children: [] }
+                  ]
+                 },
+                 {
+                  "name": "optimization",
+                  "children": [
+                   {"name": "AspectRatioBanker", "value": 7074, children: [] }
+                  ]
+                 }
+                ]
+            },
         ]
     };
 }
