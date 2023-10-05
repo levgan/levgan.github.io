@@ -78,6 +78,9 @@ async function gristSelectedRecordChanged(record, mappings) {
 
 
 
+
+
+
 // when some CRUD operation is performed on the table, we want to update the calendar
 async function gristTableChanged(records, mappings) {
   if (mappings) { colTypesFetcher.gotMappings(mappings); }
@@ -87,7 +90,8 @@ async function gristTableChanged(records, mappings) {
     const colTypes = await colTypesFetcher.getColTypes();
     // const CalendarEventObjects = mappedRecords.filter(isRecordValid).map(r => buildCalendarEventObject(r, colTypes));
     // await calendarHandler.updateCalendarEvents(CalendarEventObjects);
-    initTree();
+    initD3();
+    // document.getElementById('container').innerHTML = str1; 
   }
   dataVersion = Date.now();
 }
@@ -96,23 +100,42 @@ function focusWidget() {
   window.focus();
 }
 
-function initTree() {
-  var str1 = "<br><br><div align='center'>testing...";
-  str1 += "<br><br><table border='1'>";
-  for ( var i = 0; i < records.length; i++) {
-      var record = records[i];
-      /*
-      const mapped = grist.mapColumnNames(record);
-      if (!mapped) {
-          return;
-      }
-      */
-      str1 += "<tr>";
-      str1 += `<td> ${mappedRecords[i].tsk1} </td><td> ${mappedRecords[i].tsk2} </td>`;
-      str1 += "</tr>";
-  }
-  str1 += "</table></div>";
-  document.getElementById('main').innerHTML = str1; 
+function initD3() {
+  // Declare the chart dimensions and margins.
+  const width = 640;
+  const height = 400;
+  const marginTop = 20;
+  const marginRight = 20;
+  const marginBottom = 30;
+  const marginLeft = 40;
+
+  // Declare the x (horizontal position) scale.
+  const x = d3.scaleUtc()
+      .domain([new Date("2023-01-01"), new Date("2024-01-01")])
+      .range([marginLeft, width - marginRight]);
+
+  // Declare the y (vertical position) scale.
+  const y = d3.scaleLinear()
+      .domain([0, 100])
+      .range([height - marginBottom, marginTop]);
+
+  // Create the SVG container.
+  const svg = d3.create("svg")
+      .attr("width", width)
+      .attr("height", height);
+
+  // Add the x-axis.
+  svg.append("g")
+      .attr("transform", `translate(0,${height - marginBottom})`)
+      .call(d3.axisBottom(x));
+
+  // Add the y-axis.
+  svg.append("g")
+      .attr("transform", `translate(${marginLeft},0)`)
+      .call(d3.axisLeft(y));
+
+  // Append the SVG element.
+  container.append(svg.node());
 }
 
 // We have no good way yet to get the type of a mapped column when multiple types are allowed. We
