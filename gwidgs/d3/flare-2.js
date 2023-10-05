@@ -3,7 +3,7 @@ var data1 = getTreeData2();
 function initD3c() {
 
     // Specify the charts’ dimensions. The height is variable, depending on the layout.
-    const width = 200;
+    const width = 500;
     const widthper = "100%";
     const marginTop = 10;
     const marginRight = 10;
