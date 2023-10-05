@@ -28,7 +28,7 @@ function test() {
     if (data=='1') {
         const tree = new Tree(data1, { parent: document.body })
     } else {
-        const tree = new Tree(data3, { parent: document.body })
+        const tree = new Tree(data2, { parent: document.body })
     }
     // tree.expandAll()
 }
