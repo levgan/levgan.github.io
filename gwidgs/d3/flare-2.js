@@ -2,13 +2,14 @@ var data1 = getTreeData2();
 
 async function updConfig (d) {
     const table2 = await grist.getTable();
-    console.log("table2 id: " + table2.getTableId());
+    console.log("******current table id: " + await table2.getTableId());
     const table = await grist.getTable('Z_config');
-    console.log("table id: " + table.getTableId())
-    const  selID =  { id: 1, "fields":{"id1":1,"B":d,"C":d+"hello"}};
-    console.log("selID: " + selID);
+    console.log("******table id: " + await table.getTableId())
+    const id1 = (d.length >= 5) ? 1 : 3;
+    const  selID =  { id: 1, "fields":{"id1":id1,"B":d,"C":d+" hello"}};
+    console.log("******selID: " + selID);
     await table.update(selID);
-    console.log("after update");
+    console.log("******after update");
 }
 
 
