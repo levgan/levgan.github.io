@@ -105,7 +105,7 @@ function focusWidget() {
 function initD3b() {
   const format = d3.format(",");
   const nodeSize = 17;
-  const data1 = getTreeData1();
+  var data1 = getTreeData1();
   const root = d3.hierarchy(data1).eachBefore((i => d => d.index = i++)(0));
   const nodes = root.descendants();
   const width = 928;
