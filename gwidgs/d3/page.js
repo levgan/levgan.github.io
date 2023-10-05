@@ -105,10 +105,10 @@ function focusWidget() {
 
 function initD3b() {
   const format = d3.format(",");
-  const nodeSize = 17;
+  const nodeSize = 25;
   const root = d3.hierarchy(data1).eachBefore((i => d => d.index = i++)(0));
   const nodes = root.descendants();
-  const width = 500;
+  const width = 100;
   const height = (nodes.length + 1) * nodeSize;
 
   const columns = [
