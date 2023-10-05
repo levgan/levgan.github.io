@@ -1,4 +1,4 @@
-import Events from 'eventemitter3'
+// import Events from 'eventemitter3'
 import clicked from 'clicked'
 
 import { Input } from './input'
