@@ -20,7 +20,16 @@ import { Tree } from './tree-master/src/tree.js'
 // }
 
 function test() {
-    const tree = new Tree(data3, { parent: document.body })
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    let data = params.q; // "some_value"
+    console.log(data);
+    if (data=='1') {
+        const tree = new Tree(data1, { parent: document.body })
+    } else {
+        const tree = new Tree(data3, { parent: document.body })
+    }
     // tree.expandAll()
 }
 
