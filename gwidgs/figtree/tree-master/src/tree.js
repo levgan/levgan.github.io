@@ -1,5 +1,5 @@
 // import Events from 'eventemitter3'
-import { Events } from './eventemitter3.umd.min.js'
+import { Events } from './eventemitter3.esm.min.js'
 import { clicked } from './clicked.js'
 
 import { Input } from './input.js'
