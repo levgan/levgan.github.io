@@ -1,10 +1,10 @@
 // import Events from 'eventemitter3'
-import clicked from './clicked'
+import clicked from './clicked.js'
 
-import { Input } from './input'
-import { defaults, styleDefaults } from './defaults'
-import * as utils from './utils'
-import { icons } from './icons'
+import { Input } from './input.js'
+import { defaults, styleDefaults } from './defaults.js'
+import * as utils from './utils.js'
+import { icons } from './icons.js'
 
 export class Tree extends Events {
     /**
