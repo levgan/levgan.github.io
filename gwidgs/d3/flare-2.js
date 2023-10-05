@@ -1,8 +1,10 @@
 var data1 = getTreeData2();
 
 async function updConfig (d) {
-    const  selID =  { id1: 5, B: d };
+    const  selID =  { id1: 1, B: 'test' };
+    console.log(selID);
     const table = await grist.getTable('Z_config');
+    console.log(table);
     await table.update(selID);
 }
 
