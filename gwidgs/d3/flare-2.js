@@ -74,7 +74,7 @@ function initD3c() {
 
         // Enter any new nodes at the parent's previous position.
         const nodeEnter = node.enter().append("g")
-            .attr("transform", d => `translate(${source.y0},${source.x0})`)
+            .attr("transform", d => `translate(${source.y0/2},${source.x0})`)
             .attr("fill-opacity", 0)
             .attr("stroke-opacity", 0)
             .on("click", (event, d) => {
@@ -109,7 +109,7 @@ function initD3c() {
 
         // Transition nodes to their new position.
         const nodeUpdate = node.merge(nodeEnter).transition(transition)
-            .attr("transform", d => `translate(${d.y},${d.x})`)
+            .attr("transform", d => `translate(${d.y/2},${d.x})`)
             .attr("fill-opacity", 1)
             .attr("stroke-opacity", 1);
 
