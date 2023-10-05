@@ -1,4 +1,6 @@
-var data1 = getTreeData2();
+var data1 = getTreeData1();
+var data2 = getTreeData2();
+var data3 = getTreeData3();
 
 async function updConfig (d) {
     const table2 = await grist.getTable();
