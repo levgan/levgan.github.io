@@ -1,5 +1,5 @@
 function getTreeData1() {
-    return  `{
+    return  {
     "name": "flare",
     "children": [
      {
@@ -63,8 +63,7 @@ function getTreeData1() {
       ]
      }
     ]
-   }
-   `;
+   };
 }
 
 function getTreeData2() {
