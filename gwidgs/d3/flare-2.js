@@ -67,8 +67,7 @@ function getTreeData1() {
 }
 
 function getTreeData2() {
-    return  `
-    {
+    return {
     "name": "flare",
     "children": [
      {
@@ -447,6 +446,5 @@ function getTreeData2() {
       ]
      }
     ]
-   }
-   `;
+   };
 }

@@ -1,8 +1,8 @@
 // let's assume that it's imported in an html file
 var grist;
+var data1 = getTreeData2();
 
 // document.getElementById('container').append(initD3a());
-
 
 //registering code to run when a document is ready
 function ready(fn) {
@@ -93,7 +93,8 @@ async function gristTableChanged(records, mappings) {
     const colTypes = await colTypesFetcher.getColTypes();
     // const CalendarEventObjects = mappedRecords.filter(isRecordValid).map(r => buildCalendarEventObject(r, colTypes));
     // await calendarHandler.updateCalendarEvents(CalendarEventObjects);
-    document.getElementById('container').append(initD3a());
+    document.getElementById('container').innerHTML = initD3b();
+    // document.getElementById('container').append(initD3a());
   }
   dataVersion = Date.now();
 }
@@ -105,7 +106,6 @@ function focusWidget() {
 function initD3b() {
   const format = d3.format(",");
   const nodeSize = 17;
-  var data1 = getTreeData1();
   const root = d3.hierarchy(data1).eachBefore((i => d => d.index = i++)(0));
   const nodes = root.descendants();
   const width = 928;
