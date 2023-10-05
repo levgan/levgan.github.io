@@ -1,5 +1,5 @@
 // import Events from 'eventemitter3'
-import clicked from 'clicked'
+import clicked from './clicked'
 
 import { Input } from './input'
 import { defaults, styleDefaults } from './defaults'
