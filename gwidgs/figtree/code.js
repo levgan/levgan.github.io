@@ -2,26 +2,26 @@
 
 import { Tree } from './tree-master/src/tree.js' 
 
-const data = {
-    children: [
-        { name: 'furity', children: [
-            { name: 'apples', children: [] },
-            { name: 'oranges', children: [
-                { name: 'tangerines', children: [] },
-                { name: 'mandarins', children: [] },
-                { name: 'pomelo', children: [] },
-                { name: 'blood orange', children: [] },
-            ] }
-        ]},
-        { name: 'vegetabley', children: [
-            { name: 'brocolli', children: [] },
-        ] },
-    ]
-}
+// const data = {
+//     children: [
+//         { name: 'furity', children: [
+//             { name: 'apples', children: [] },
+//             { name: 'oranges', children: [
+//                 { name: 'tangerines', children: [] },
+//                 { name: 'mandarins', children: [] },
+//                 { name: 'pomelo', children: [] },
+//                 { name: 'blood orange', children: [] },
+//             ] }
+//         ]},
+//         { name: 'vegetabley', children: [
+//             { name: 'brocolli', children: [] },
+//         ] },
+//     ]
+// }
 
 function test() {
-    const tree = new Tree(data, { parent: document.body })
-    tree.expandAll()
+    const tree = new Tree(data1, { parent: document.body })
+    // tree.expandAll()
 }
 
 window.onload = function () {
