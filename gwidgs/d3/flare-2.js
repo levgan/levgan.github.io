@@ -1,10 +1,10 @@
 var data1 = getTreeData2();
 
 function updConfig (d) {
-    const  selID =  { id: 1, "records":[{"fields":{"id1":5,"B":d}}] };
-    console.log(selID);
     const table = grist.getTable('Z_config');
-    console.log(table);
+    const  selID =  { id: 1, "record":[{"fields":{"id1":1,"B":d,"C":d+"hello"}}] };
+    console.log(selID);
+    console.log(table.getTableId())
     table.update(selID);
 }
 
