@@ -134,8 +134,9 @@ function initD3() {
       .call(d3.axisLeft(y));
 
   // Append the SVG element.
-  container = document.getElementById('container'); 
-  container.append(svg.node());
+  document.getElementById('container').append(svg.node());
+  // return svg.node();
+  
 }
 
 // We have no good way yet to get the type of a mapped column when multiple types are allowed. We
