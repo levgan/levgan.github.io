@@ -1,6 +1,6 @@
 // import forkMe from 'fork-me-github'
 
-import { Tree } from './tree-master/src/tree' 
+import { Tree } from './tree-master/src/tree.js' 
 
 const data = {
     children: [
