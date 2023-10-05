@@ -1,10 +1,12 @@
 var data1 = getTreeData2();
 
-function updConfig (d) {
+async function updConfig (d) {
+    const table2 = grist.getTable();
+    console.log("table2 id: " + table2.getTableId());
     const table = grist.getTable('Z_config');
-    const  selID =  { id: 1, "record":[{"fields":{"id1":1,"B":d,"C":d+"hello"}}] };
-    console.log(selID);
-    console.log(table.getTableId())
+    console.log("table id: " + table.getTableId())
+    const  selID =  { id: 1, "fields":{"id1":1,"B":d,"C":d+"hello"}};
+    console.log("selID: " + selID);
     table.update(selID);
 }
 
@@ -97,7 +99,7 @@ function initD3c() {
             .on("click", function (event, d) { 
                 event.stopPropagation();
                 console.log(d.data.name);
-                updConfig(d.data.name);
+                await updConfig(d.data.name);
             })
             // .on("click", function(d) {
             //     // d3.event.stopPropagation();
