@@ -3,7 +3,7 @@ var data1 = getTreeData2();
 function initD3c() {
 
     // Specify the charts’ dimensions. The height is variable, depending on the layout.
-    const width = 300;
+    const width = 350;
     const widthper = "100%";
     const marginTop = 10;
     const marginRight = 10;
@@ -19,7 +19,7 @@ function initD3c() {
 
     // Define the tree layout and the shape for links.
     const tree = d3.tree().nodeSize([dx, dy]);
-    const diagonal = d3.linkHorizontal().x(d => d.y).y(d => d.x);
+    const diagonal = d3.linkHorizontal().x(d => d.y/2).y(d => d.x);
 
     // Create the SVG container, a layer for the links and a layer for the nodes.
     const svg = d3.create("svg")
@@ -82,7 +82,7 @@ function initD3c() {
             .attr("stroke-width", 10);
 
         nodeEnter.append("text")
-            .attr("dy", "0.31em")
+            .attr("dy", "0.25em")
             .attr("x", d => d._children ? -6 : 6)
             .attr("text-anchor", d => d._children ? "end" : "start")
             .on("click", function (event, d) { 
