@@ -1,4 +1,4 @@
-data = `
+var data = `
 {
     "name": "flare",
     "children": [
@@ -379,4 +379,4 @@ data = `
      }
     ]
    }
-`;
+   `;
