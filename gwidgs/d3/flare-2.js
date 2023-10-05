@@ -6,6 +6,7 @@ async function updConfig (d) {
     const table = await grist.getTable('Z_config');
     console.log("******table id: " + await table.getTableId())
     const id1 = (d.length >= 5) ? 1 : 3;
+    console.log(`********d length ${d.length} id1 ${id1}`);
     const  selID =  { id: 1, "fields":{"id1":id1,"B":d,"C":d+" hello"}};
     console.log("******selID: " + selID);
     await table.update(selID);
