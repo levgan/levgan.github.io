@@ -1,5 +1,6 @@
-var data1 = `
-{
+function getTreeData1() {
+    return  `
+    {
     "name": "flare",
     "children": [
      {
@@ -380,3 +381,4 @@ var data1 = `
     ]
    }
    `;
+}
