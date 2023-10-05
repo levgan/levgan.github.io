@@ -84,10 +84,11 @@ function initD3c() {
             .attr("dy", "0.31em")
             .attr("x", d => d._children ? -6 : 6)
             .attr("text-anchor", d => d._children ? "end" : "start")
-            .on("click", function(d) {
-                // d3.event.stopPropagation();
-                console.log(d.data); 
-              })
+            .on("click", d => console.log(d.data.name))
+            // .on("click", function(d) {
+            //     // d3.event.stopPropagation();
+            //     console.log(d.data); 
+            //   })
             .text(d => d.data.name)
             .clone(true).lower()
             .attr("stroke-linejoin", "round")
