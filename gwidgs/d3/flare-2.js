@@ -25,7 +25,7 @@ function initD3c() {
     const svg = d3.create("svg")
         .attr("width", widthper)
         .attr("height", dx)
-        .attr("viewBox", [-marginLeft, -marginTop, widthper, dx])
+        .attr("viewBox", [-marginLeft, -marginTop, width, dx])
         .attr("style", "max-width: 100%; height: auto; font: 10px sans-serif; user-select: none;");
 
     const gLink = svg.append("g")
@@ -58,7 +58,7 @@ function initD3c() {
         const transition = svg.transition()
             .duration(duration)
             .attr("height", height)
-            .attr("viewBox", [-marginLeft, left.x - marginTop, widthper, height])
+            .attr("viewBox", [-marginLeft, left.x - marginTop, width, height])
             .tween("resize", window.ResizeObserver ? null : () => () => svg.dispatch("toggle"));
 
         // Update the nodes…
