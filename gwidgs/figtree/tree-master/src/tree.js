@@ -1,5 +1,5 @@
 // import Events from 'eventemitter3'
-import clicked from './clicked.js'
+import { clicked } from './clicked.js'
 
 import { Input } from './input.js'
 import { defaults, styleDefaults } from './defaults.js'
