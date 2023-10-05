@@ -84,12 +84,12 @@ function initD3c() {
             .attr("dy", "0.31em")
             .attr("x", d => d._children ? -6 : 6)
             .attr("text-anchor", d => d._children ? "end" : "start")
-            .text(d => d.data.name)
             .on("click", function(d) {
                 // d3.event.stopPropagation();
                 console.log(d.data.name);
               })
-        .clone(true).lower()
+            .text(d => d.data.name)
+            .clone(true).lower()
             .attr("stroke-linejoin", "round")
             .attr("stroke-width", 3)
             .attr("stroke", "white");
