@@ -91,7 +91,6 @@ async function gristTableChanged(records, mappings) {
     // const CalendarEventObjects = mappedRecords.filter(isRecordValid).map(r => buildCalendarEventObject(r, colTypes));
     // await calendarHandler.updateCalendarEvents(CalendarEventObjects);
     initD3();
-    // document.getElementById('container').innerHTML = str1; 
   }
   dataVersion = Date.now();
 }
@@ -135,6 +134,7 @@ function initD3() {
       .call(d3.axisLeft(y));
 
   // Append the SVG element.
+  container = document.getElementById('container'); 
   container.append(svg.node());
 }
 
