@@ -1,3 +1,6 @@
+// eventually compile it all
+import { Tree } from './tree-master/src/tree.js' 
+
 // let's assume that it's imported in an html file
 var grist;
 
@@ -21,7 +24,7 @@ ready(async () => {
 function getGristOptions() {
   return [
     {
-      name: "tsk1",
+      name: "ID1",
       title: "ID 1",
       optional: false,
       type: "Ref",
@@ -29,7 +32,7 @@ function getGristOptions() {
       allowMultiple: false
     },
     {
-        name: "tsk2",
+        name: "ID2",
         title: "ID 2",
         optional: false,
         type: "Ref",
@@ -88,8 +91,9 @@ async function gristTableChanged(records, mappings) {
     const colTypes = await colTypesFetcher.getColTypes();
     // const CalendarEventObjects = mappedRecords.filter(isRecordValid).map(r => buildCalendarEventObject(r, colTypes));
     // await calendarHandler.updateCalendarEvents(CalendarEventObjects);
-    document.getElementById('container').innerHTML = 'treenav';
-    // document.getElementById('container').append(initD3c());
+    //document.getElementById('container').innerHTML = '';
+    //document.getElementById('container').append(initD3c());
+    // test();
   }
   dataVersion = Date.now();
 }
@@ -97,6 +101,24 @@ async function gristTableChanged(records, mappings) {
 function focusWidget() {
   window.focus();
 }
+
+function test() {
+    
+    // get html query params
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    let data = params.q; // "some_value"
+    console.log(data);
+
+    if (data=='1') {
+        const tree = new Tree(data1, { parent: document.body })
+    } else {
+        const tree = new Tree(data2, { parent: document.body })
+    }
+    // tree.expandAll()
+}
+
 
 // We have no good way yet to get the type of a mapped column when multiple types are allowed. We
 // get it via the metadata tables instead. There is no good way to know when a column's type is
