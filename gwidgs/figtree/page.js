@@ -1,3 +1,6 @@
+// eventually compile it all
+import { Tree } from './tree-master/src/tree.js' 
+
 // let's assume that it's imported in an html file
 var grist;
 
@@ -10,6 +13,11 @@ function ready(fn) {
   } else {
     document.addEventListener('DOMContentLoaded', fn);
   }
+}
+
+window.onload = function () {
+  test()
+  // forkMe('https://github.com/davidfig/tree')
 }
 
 // when a document is ready, register the calendar and subscribe to grist events
@@ -97,6 +105,24 @@ async function gristTableChanged(records, mappings) {
 function focusWidget() {
   window.focus();
 }
+
+function test() {
+    
+    // get html query params
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    let data = params.q; // "some_value"
+    console.log(data);
+
+    if (data=='1') {
+        const tree = new Tree(data1, { parent: document.body })
+    } else {
+        const tree = new Tree(data2, { parent: document.body })
+    }
+    // tree.expandAll()
+}
+
 
 // We have no good way yet to get the type of a mapped column when multiple types are allowed. We
 // get it via the metadata tables instead. There is no good way to know when a column's type is
