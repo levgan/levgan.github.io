@@ -168,7 +168,14 @@ export class Tree extends Events {
             html: data.expanded ? icons.open : icons.closed,
             className: `${this.prefixClassName}-expand`
         })
-        leaf.name = utils.html({ parent: leaf.content, html: data.name, className: `${this.prefixClassName}-name` })
+
+        //.lg.
+        if (data.id) {
+            leaf.name = utils.html({ parent: leaf.content, id: data.id, html: data.name, className: `${this.prefixClassName}-name` })
+        } else {
+            leaf.name = utils.html({ parent: leaf.content, html: data.name, className: `${this.prefixClassName}-name` })
+        }
+        
         leaf.name.addEventListener('mousedown', e => this._input._down(e))
         leaf.name.addEventListener('touchstart', e => this._input._down(e))
         if (data.children) {
