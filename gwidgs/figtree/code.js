@@ -19,14 +19,6 @@ function test() {
 
     // tree.expandAll()
 
-    var elements = document.getElementsByClassName("yy-tree");
-
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].addEventListener('clicked', treeClicked, false);
-        // alert('*******************event listener added');
-        //elements[i].addEventListener('click', myFunction, false);
-    }
-
     var elements = document.getElementsByClassName("yy-tree-name");
 
     for (var i = 0; i < elements.length; i++) {
@@ -37,16 +29,10 @@ function test() {
 
 }
 
-var treeClicked = function() {
+var treeNameClicked = function(e) {
     // var attribute = this.getAttribute("data-myattribute");
     // alert(attribute);
-    console.log('clicked');
-};
-
-var treeNameClicked = function() {
-    // var attribute = this.getAttribute("data-myattribute");
-    // alert(attribute);
-    console.log('name clicked');
+    console.log(e);
 };
 
 window.onload = function () {
