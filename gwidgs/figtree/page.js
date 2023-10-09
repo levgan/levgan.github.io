@@ -1,5 +1,5 @@
 // eventually compile it all
-// import { Tree } from './tree-master/src/tree.js' 
+import { Tree } from './tree-master/src/tree.js' 
 
 // let's assume that it's imported in an html file
 var grist;
@@ -15,10 +15,6 @@ function ready(fn) {
   }
 }
 
-// window.onload = function () {
-//   test();
-// }
-
 // when a document is ready, register the calendar and subscribe to grist events
 ready(async () => {
   await configureGristSettings();
@@ -28,7 +24,7 @@ ready(async () => {
 function getGristOptions() {
   return [
     {
-      name: "tsk1",
+      name: "ID1",
       title: "ID 1",
       optional: false,
       type: "Ref",
@@ -36,7 +32,7 @@ function getGristOptions() {
       allowMultiple: false
     },
     {
-        name: "tsk2",
+        name: "ID2",
         title: "ID 2",
         optional: false,
         type: "Ref",
@@ -97,7 +93,7 @@ async function gristTableChanged(records, mappings) {
     // await calendarHandler.updateCalendarEvents(CalendarEventObjects);
     //document.getElementById('container').innerHTML = '';
     //document.getElementById('container').append(initD3c());
-    //test();
+    test();
   }
   dataVersion = Date.now();
 }
