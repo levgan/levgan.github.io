@@ -31,7 +31,7 @@ function test() {
 
     for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener('clicked', treeNameClicked, false);
-        alert('*******************event listener added');
+        // alert('*******************event listener added');
         //elements[i].addEventListener('click', myFunction, false);
     }
 
