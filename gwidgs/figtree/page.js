@@ -1,3 +1,6 @@
+// eventually compile it all
+import { Tree } from './tree-master/src/tree.js' 
+
 // let's assume that it's imported in an html file
 var grist;
 
