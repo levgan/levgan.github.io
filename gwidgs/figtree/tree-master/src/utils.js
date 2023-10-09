@@ -148,6 +148,7 @@ export function removeChildren(element) {
 
 export function html(options) {
     options = options || {}
+    console.log(options);
     const object = document.createElement(options.type || 'div')
     if (options.parent) {
         options.parent.appendChild(object)
@@ -159,6 +160,7 @@ export function html(options) {
         object.innerHTML = options.html
     }
     if (options.id) {
+        console.log('id' + options.id);
         object.id = options.id
     }
     return object
