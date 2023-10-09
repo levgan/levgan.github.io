@@ -24,11 +24,12 @@ function test() {
     var myFunction = function() {
         // var attribute = this.getAttribute("data-myattribute");
         // alert(attribute);
-        console.log(this);
+        console.log('clicked');
     };
     
     for (var i = 0; i < elements.length; i++) {
-        elements[i].addEventListener('click', myFunction, false);
+        elements[i].addEventListener('clicked', myFunction, false);
+        //elements[i].addEventListener('click', myFunction, false);
     }
 
 }
