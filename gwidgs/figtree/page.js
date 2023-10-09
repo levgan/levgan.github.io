@@ -1,5 +1,5 @@
 // eventually compile it all
-import { Tree } from './tree-master/src/tree.js' 
+// import { Tree } from './tree-master/src/tree.js' 
 
 // let's assume that it's imported in an html file
 var grist;
@@ -97,7 +97,7 @@ async function gristTableChanged(records, mappings) {
     // await calendarHandler.updateCalendarEvents(CalendarEventObjects);
     //document.getElementById('container').innerHTML = '';
     //document.getElementById('container').append(initD3c());
-    test();
+    //test();
   }
   dataVersion = Date.now();
 }
