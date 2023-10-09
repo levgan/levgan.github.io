@@ -32,7 +32,7 @@ function test() {
 var treeNameClicked = function(e) {
     // var attribute = this.getAttribute("data-myattribute");
     // alert(attribute);
-    console.log(e);
+    console.log("Clicked: " + e.srcElement.id);
 };
 
 window.onload = function () {
