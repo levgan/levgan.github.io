@@ -16,8 +16,21 @@ function test() {
     } else {
         const tree = new Tree(data2, { parent: document.body })
     }
-    tree.addEventListener('click', treeClicked);
+
     // tree.expandAll()
+
+    var elements = document.getElementsByClassName("yy-tree");
+
+    var myFunction = function() {
+        // var attribute = this.getAttribute("data-myattribute");
+        // alert(attribute);
+        console.log(this);
+    };
+    
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click', myFunction, false);
+    }
+
 }
 
 function treeClicked(e) {
