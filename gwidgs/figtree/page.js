@@ -93,7 +93,7 @@ async function gristTableChanged(records, mappings) {
     // await calendarHandler.updateCalendarEvents(CalendarEventObjects);
     //document.getElementById('container').innerHTML = '';
     //document.getElementById('container').append(initD3c());
-    test();
+    // test();
   }
   dataVersion = Date.now();
 }
