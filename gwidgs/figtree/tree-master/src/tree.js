@@ -170,7 +170,7 @@ export class Tree extends Events {
         })
 
         //.lg.
-        if (data.id) {
+        if (data.id) { 
             leaf.name = utils.html({ parent: leaf.content, id: data.id, html: data.name, className: `${this.prefixClassName}-name` })
         } else {
             leaf.name = utils.html({ parent: leaf.content, html: data.name, className: `${this.prefixClassName}-name` })
