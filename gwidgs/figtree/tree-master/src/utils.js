@@ -160,8 +160,6 @@ export function html(options) {
         object.innerHTML = options.html
     }
     if (options.id) {
-        //.lg.
-        object.innerHTML = options.html // + " [" + options.id + "]"
         object.id = options.id
     }
     return object
