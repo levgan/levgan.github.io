@@ -2,23 +2,6 @@
 
 import { Tree } from './tree-master/src/tree.js' 
 
-// const data = {
-//     children: [
-//         { name: 'furity', children: [
-//             { name: 'apples', children: [] },
-//             { name: 'oranges', children: [
-//                 { name: 'tangerines', children: [] },
-//                 { name: 'mandarins', children: [] },
-//                 { name: 'pomelo', children: [] },
-//                 { name: 'blood orange', children: [] },
-//             ] }
-//         ]},
-//         { name: 'vegetabley', children: [
-//             { name: 'brocolli', children: [] },
-//         ] },
-//     ]
-// }
-
 function test() {
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
