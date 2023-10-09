@@ -16,7 +16,12 @@ function test() {
     } else {
         const tree = new Tree(data2, { parent: document.body })
     }
+    tree.addEventListener('click', treeClicked);
     // tree.expandAll()
+}
+
+function treeClicked(e) {
+    console.log('treeClicked');
 }
 
 window.onload = function () {
