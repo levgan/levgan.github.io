@@ -368,7 +368,7 @@ function getTreeData2() {
     "name": "flare",
     "children": [
      {
-      "name": "analytics",
+      "name": "analytics", id: 22,
       "children": [
        {
         "name": "cluster",

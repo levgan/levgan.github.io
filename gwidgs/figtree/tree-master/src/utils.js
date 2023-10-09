@@ -161,7 +161,7 @@ export function html(options) {
     }
     if (options.id) {
         //.lg.
-        object.innerHTML = options.html + " [" + options.id + "]"
+        object.innerHTML = options.html // + " [" + options.id + "]"
         object.id = options.id
     }
     return object
