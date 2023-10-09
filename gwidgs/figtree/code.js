@@ -23,14 +23,14 @@ function test() {
 
     for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener('clicked', treeClicked, false);
-        alert('*******************event listener added');
+        // alert('*******************event listener added');
         //elements[i].addEventListener('click', myFunction, false);
     }
 
     var elements = document.getElementsByClassName("yy-tree-name");
 
     for (var i = 0; i < elements.length; i++) {
-        elements[i].addEventListener('clicked', treeNameClicked, false);
+        elements[i].addEventListener('mousedown', treeNameClicked, false);
         // alert('*******************event listener added');
         //elements[i].addEventListener('click', myFunction, false);
     }
