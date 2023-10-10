@@ -69,11 +69,13 @@ async function composeJsonTreeTable(table) {
     // add root nodes
     var jsonStr = '{"name": "flare", "children": [';
     for (var i = 0; i < table.id.length; i++) {
-        jsonStr += '{"name": "' + table.name[i] + '",  "id": "' + table.id[i] + '", ';
-        // add child nodes
-        // await addJsonNodeChildren(table, i);
-        jsonStr = jsonStr.slice(0,-2);
-        jsonStr += "},";        
+        if (table.parent_tmp < 1) {
+            jsonStr += '{"name": "' + table.name[i] + '",  "id": "' + table.id[i] + '", ';
+            // add child nodes
+            // await addJsonNodeChildren(table, i);
+            jsonStr = jsonStr.slice(0,-2);
+            jsonStr += "},";        
+        }
     }
     jsonStr = jsonStr.slice(0,-1);
     jsonStr += "]}";
