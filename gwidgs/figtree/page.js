@@ -33,7 +33,7 @@ function getGristOptions() {
       name: "id1",
       title: "Item ID",
       optional: false,
-      type: "Int",
+      type: "Id",
       description: "",
       allowMultiple: false
     },
