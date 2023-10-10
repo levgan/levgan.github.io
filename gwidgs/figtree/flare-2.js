@@ -5,6 +5,7 @@ var data3 = getTreeData3();
 async function updConfig (d) {
     const table2 = await grist.getTable();
     console.log("******current table id: " + await table2.getTableId());
+    console.log("******TABLE:....");
     console.log(table2);
     const table = await grist.getTable('Z_config');
     console.log("******table id: " + await table.getTableId())
