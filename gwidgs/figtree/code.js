@@ -80,7 +80,7 @@ async function composeJsonTreeTable(table) {
 async function addJsonNodeChildren(table, parentid) {
     jsonStr = jsonStr + "children["
     for (var i = 0; i < table.id.length; i++) {
-        if (table.parent_tmp[i] == parentid) {
+        if (table.id2[i] == parentid) {
             jsonStr += "{name: " + table.id1[i] + ",  id: " + table.id1[i] + ", ";
             // add child nodes
             await addJsonNodeChildren(table, i);
