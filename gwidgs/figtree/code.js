@@ -71,6 +71,7 @@ async function composeJsonTreeTable(table) {
         jsonStr += "{name: " + table.name[i] + ",  id: " + table.id[i] + ", ";
         // add child nodes
         await addJsonNodeChildren(table, i);
+        jsonStr = jsonStr.slice(0,-1);
         jsonStr += "}"        
     }
     jsonStr += "]}";
