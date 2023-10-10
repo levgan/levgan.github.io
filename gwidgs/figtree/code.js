@@ -2,6 +2,9 @@
 
 import { Tree } from './tree-master/src/tree.js' 
 
+
+
+
 function test() {
     
     // get html query params
@@ -13,10 +16,12 @@ function test() {
 
     if (data=='1') {
         const tree = new Tree(data1, { parent: document.body })
+        console.log(tree);
     } else {
         const tree = new Tree(data2, { parent: document.body })
+        console.log(tree);
     }
-
+    
     // tree.expandAll()
 
     var elements = document.getElementsByClassName("yy-tree-name");
@@ -29,13 +34,49 @@ function test() {
 
 }
 
-var treeNameClicked = function(e) {
+var treeNameClicked = async function(e) {
     // var attribute = this.getAttribute("data-myattribute");
     // alert(attribute);
+    // set record pointer to clicked node to fire onRecord for selectBy
+    await grist.setCursorPos({rowId: e.srcElement.id});
     console.log("Clicked: " + e.srcElement.id);
 };
 
 window.onload = function () {
     test()
     // forkMe('https://github.com/davidfig/tree')
+}
+
+
+async function loadTreeTable (d) {
+    const treeTable = await grist.fetchSelectedTable();
+    const jsonTree = composeJsonTreeTable(treeTable);
+    console.log(jsonTree);
+}
+
+
+function composeJsonTreeTable(table) {
+    // add root nodes
+    var jsonStr = "{name: root, children[";
+    for (var i = 0; i < table.id.length; i++) {
+        table.id[i];
+        jsonStr += "{name: " + table.name[i] + ",  id: " + table.id[i] + ", ";
+        // add child nodes
+        addJsonNodeChildren(table, i);
+        jsonStr += "}"        
+    }
+    jsonStr += "]}";
+    return jsonStr;
+}
+
+function addJsonNodeChildren(table, parentid) {
+    jsonStr = jsonStr + "children["
+    for (var i = 0; i < table.id.length; i++) {
+        if (table.parent_tmp[i] == parentid) {
+            jsonStr += "{name: " + table.id[i] + ",  id: " + table.id[i] + ", ";
+            // add child nodes
+            addJsonNodeChildren(table, i);
+            jsonStr += "],"
+        }
+    };
 }
