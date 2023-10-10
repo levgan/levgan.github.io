@@ -21,16 +21,24 @@ ready(async () => {
 function getGristOptions() {
   return [
     {
-      name: "tsk1",
-      title: "ID 1",
+      name: "name1",
+      title: "Node Caption",
       optional: false,
-      type: "Ref",
+      type: "Text",
       description: "",
       allowMultiple: false
     },
     {
-        name: "tsk2",
-        title: "ID 2",
+      name: "id1",
+      title: "Node ID",
+      optional: false,
+      type: "Numeric",
+      description: "",
+      allowMultiple: false
+    },
+    {
+        name: "id2",
+        title: "Parent ID",
         optional: false,
         type: "Ref",
         description: "",
