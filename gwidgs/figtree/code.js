@@ -23,7 +23,7 @@ async function test() {
         var jsontree2 = await loadTreeTable();
         console.log("******************************************* jsontree");
         console.log(jsontree2);
-        // const tree = new Tree(jsonStr, { parent: document.body })
+        const tree = new Tree(jsonStr, { parent: document.body })
     }
     
     // tree.expandAll()
@@ -72,8 +72,9 @@ async function composeJsonTreeTable(table) {
         // add child nodes
         // await addJsonNodeChildren(table, i);
         jsonStr = jsonStr.slice(0,-2);
-        jsonStr += "}";        
+        jsonStr += "},";        
     }
+    jsonStr = jsonStr.slice(0,-1);
     jsonStr += "]}";
     return jsonStr;
 }
