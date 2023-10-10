@@ -21,9 +21,10 @@ async function test() {
         // const tree = new Tree(data2, { parent: document.body })
         // console.log(tree);
         var jsontree2 = await loadTreeTable();
+        jsontree2 = JSON.parse(jsontree2);
         console.log("******************************************* jsontree");
         console.log(jsontree2);
-        const tree = new Tree(await loadTreeTable(), { parent: document.body })
+        const tree = new Tree(await JSON.parse(await loadTreeTable()), { parent: document.body })
     }
     
     // tree.expandAll()
@@ -58,7 +59,6 @@ async function loadTreeTable (d) {
     console.log("************************************ load");
     console.log(treeTable);
     var jsonTree = await composeJsonTreeTable(treeTable);
-    jsonTree = JSON.parse(jsonTree);
     return jsonTree;
 }
 
