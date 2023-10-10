@@ -54,13 +54,15 @@ window.onload = function () {
 
 async function loadTreeTable (d) {
     var treeTable = await grist.fetchSelectedTable();
-    var jsonTree = composeJsonTreeTable(treeTable);
+    console.log("************************************ load");
+    console.log(treeTable);
+    var jsonTree = await composeJsonTreeTable(treeTable);
     return jsonTree;
 }
 
 
-function composeJsonTreeTable(table) {
-    console.log("************************************");
+async function composeJsonTreeTable(table) {
+    console.log("************************************ compose");
     console.log(table);
     // add root nodes
     var jsonStr = "{name: root, children[";
@@ -68,20 +70,20 @@ function composeJsonTreeTable(table) {
         table.id[i];
         jsonStr += "{name: " + table.name[i] + ",  id: " + table.id[i] + ", ";
         // add child nodes
-        addJsonNodeChildren(table, i);
+        await addJsonNodeChildren(table, i);
         jsonStr += "}"        
     }
     jsonStr += "]}";
     return jsonStr;
 }
 
-function addJsonNodeChildren(table, parentid) {
+async function addJsonNodeChildren(table, parentid) {
     jsonStr = jsonStr + "children["
     for (var i = 0; i < table.id.length; i++) {
         if (table.parent_tmp[i] == parentid) {
             jsonStr += "{name: " + table.id[i] + ",  id: " + table.id[i] + ", ";
             // add child nodes
-            addJsonNodeChildren(table, i);
+            await addJsonNodeChildren(table, i);
             jsonStr += "],"
         }
     };
