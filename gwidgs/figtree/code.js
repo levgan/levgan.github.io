@@ -47,7 +47,7 @@ var treeNameClicked = async function(e) {
 };
 
 window.onload = function () {
-    test()
+    // test()
     // forkMe('https://github.com/davidfig/tree')
 }
 
