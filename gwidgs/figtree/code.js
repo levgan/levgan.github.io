@@ -54,7 +54,7 @@ window.onload = function () {
 
 async function loadTreeTable (d) {
     var treeTable = await grist.fetchSelectedTable();
-    var treeTableMapped = grist.mapColumnNames(treeTable);
+    var treeTableMapped = grist.mapColumnNames(treeTable, mappings);
     console.log("************************************ load");
     console.log(treeTableMapped);
     var jsonTree = await composeJsonTreeTable(treeTableMapped);
