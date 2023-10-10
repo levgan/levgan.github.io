@@ -53,8 +53,8 @@ window.onload = function () {
 
 
 async function loadTreeTable (d) {
-    const treeTable = await grist.fetchSelectedTable();
-    const jsonTree = composeJsonTreeTable(treeTable);
+    var treeTable = await grist.fetchSelectedTable();
+    var jsonTree = composeJsonTreeTable(treeTable);
     return jsonTree;
 }
 
