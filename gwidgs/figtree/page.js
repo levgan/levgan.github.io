@@ -98,8 +98,9 @@ async function gristTableChanged(records, mappings) {
     const colTypes = await colTypesFetcher.getColTypes();
     // const CalendarEventObjects = mappedRecords.filter(isRecordValid).map(r => buildCalendarEventObject(r, colTypes));
     // await calendarHandler.updateCalendarEvents(CalendarEventObjects);
-    document.getElementById('container').innerHTML = '';
+    document.getElementById('container').innerHTML = 'testing';
     // document.getElementById('container').append(initD3c());
+    test();
   }
   dataVersion = Date.now();
 }
