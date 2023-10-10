@@ -18,8 +18,12 @@ function test() {
         const tree = new Tree(data1, { parent: document.body })
         // console.log(tree);
     } else {
-        const tree = new Tree(data2, { parent: document.body })
+        // const tree = new Tree(data2, { parent: document.body })
         // console.log(tree);
+        const jsonTree2 = loadTreeTable();
+        console.log("*******************************************");
+        console.log(jsonTree2);
+        const tree = new Tree(jsonTree2, { parent: document.body })
     }
     
     // tree.expandAll()
@@ -39,7 +43,7 @@ var treeNameClicked = async function(e) {
     // alert(attribute);
     // set record pointer to clicked node to fire onRecord for selectBy
     await grist.setCursorPos({rowId: e.srcElement.id});
-    console.log("*****************Clicked: " + e.srcElement.id);
+    console.log("********************** Clicked: " + e.srcElement.id);
 };
 
 window.onload = function () {
@@ -51,8 +55,7 @@ window.onload = function () {
 async function loadTreeTable (d) {
     const treeTable = await grist.fetchSelectedTable();
     const jsonTree = composeJsonTreeTable(treeTable);
-    console.log("*******************************************");
-    console.log(jsonTree);
+    return jsonTree;
 }
 
 

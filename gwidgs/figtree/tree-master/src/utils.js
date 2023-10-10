@@ -148,7 +148,7 @@ export function removeChildren(element) {
 
 export function html(options) {
     options = options || {}
-    console.log(options);
+    // console.log(options);
     const object = document.createElement(options.type || 'div')
     if (options.parent) {
         options.parent.appendChild(object)
