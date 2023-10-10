@@ -72,7 +72,7 @@ async function composeJsonTreeTable(table) {
         // add child nodes
         await addJsonNodeChildren(table, i);
         jsonStr = jsonStr.slice(0,-1);
-        jsonStr += "}"        
+        jsonStr += "}";        
     }
     jsonStr += "]}";
     return jsonStr;
