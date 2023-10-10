@@ -66,9 +66,9 @@ async function composeJsonTreeTable(table) {
     console.log("************************************ compose");
     console.log(table);
     // add root nodes
-    var jsonStr = "{name: root, children: [";
+    var jsonStr = '{"name": "flare", "children": [';
     for (var i = 0; i < table.id.length; i++) {
-        jsonStr += "{name: " + table.name[i] + ",  id: " + table.id[i] + ", ";
+        jsonStr += '{"name": "' + table.name[i] + '",  "id: "' + table.id[i] + '", ';
         // add child nodes
         // await addJsonNodeChildren(table, i);
         jsonStr = jsonStr.slice(0,-2);
