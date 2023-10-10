@@ -47,17 +47,17 @@ var treeNameClicked = async function(e) {
 };
 
 window.onload = function () {
-    // test()
+    test()
     // forkMe('https://github.com/davidfig/tree')
 }
 
 
 async function loadTreeTable (d) {
     var treeTable = await grist.fetchSelectedTable();
-    var treeTableMapped = grist.mapColumnNames(treeTable, mappings);
+    // var treeTableMapped = grist.mapColumnNames(treeTable, mappings);
     console.log("************************************ load");
     console.log(treeTableMapped);
-    var jsonTree = await composeJsonTreeTable(treeTableMapped);
+    var jsonTree = await composeJsonTreeTable(treeTable);
     return jsonTree;
 }
 
@@ -68,7 +68,7 @@ async function composeJsonTreeTable(table) {
     // add root nodes
     var jsonStr = "{name: root, children[";
     for (var i = 0; i < table.id.length; i++) {
-        jsonStr += "{name: " + table.id[i] + ",  id: " + table.id[i] + ", ";
+        jsonStr += "{name: " + table.name[i] + ",  id: " + table.id[i] + ", ";
         // add child nodes
         await addJsonNodeChildren(table, i);
         jsonStr += "}"        
@@ -80,7 +80,7 @@ async function composeJsonTreeTable(table) {
 async function addJsonNodeChildren(table, parentid) {
     jsonStr = jsonStr + "children["
     for (var i = 0; i < table.id.length; i++) {
-        if (table.pid[i] == parentid) {
+        if (table.tmp_parent[i] == parentid) {
             jsonStr += "{name: " + table.name[i] + ",  id: " + table.id[i] + ", ";
             // add child nodes
             await addJsonNodeChildren(table, i);
