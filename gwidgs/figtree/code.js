@@ -23,7 +23,7 @@ async function test() {
         await loadTreeTable();
         console.log("*******************************************");
         console.log(jsonStr);
-        const tree = new Tree(jsonStr, { parent: document.body })
+        // const tree = new Tree(jsonStr, { parent: document.body })
     }
     
     // tree.expandAll()
@@ -47,7 +47,7 @@ var treeNameClicked = async function(e) {
 };
 
 window.onload = function () {
-    test()
+    test();
     // forkMe('https://github.com/davidfig/tree')
 }
 
@@ -70,7 +70,7 @@ async function composeJsonTreeTable(table) {
     for (var i = 0; i < table.id.length; i++) {
         jsonStr += "{name: " + table.name[i] + ",  id: " + table.id[i] + ", ";
         // add child nodes
-        await addJsonNodeChildren(table, i);
+        // await addJsonNodeChildren(table, i);
         jsonStr = jsonStr.slice(0,-2);
         jsonStr += "}";        
     }
