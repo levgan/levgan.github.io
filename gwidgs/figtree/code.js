@@ -15,7 +15,7 @@ async function test() {
     // console.log(data);
 
     if (data=='1') {
-        const tree = new Tree(data1, { parent: document.body })
+        const tree = new Tree(data4, { parent: document.body })
         // console.log(tree);
     } else {
         // const tree = new Tree(data2, { parent: document.body })
@@ -68,7 +68,7 @@ async function composeJsonTreeTable(table) {
     // add root nodes
     var jsonStr = '{"name": "flare", "children": [';
     for (var i = 0; i < table.id.length; i++) {
-        jsonStr += '{"name": "' + table.name[i] + '",  "id: "' + table.id[i] + '", ';
+        jsonStr += '{"name": "' + table.name[i] + '",  "id": "' + table.id[i] + '", ';
         // add child nodes
         // await addJsonNodeChildren(table, i);
         jsonStr = jsonStr.slice(0,-2);
@@ -87,7 +87,7 @@ async function addJsonNodeChildren(table, parentid) {
     jsonStr = jsonStr + "children: ["
     for (var i = 0; i < table.id.length; i++) {
         if (table.parent_tmp[i] == parentid) {
-            jsonStr += "{name: " + table.name[i] + ",  id: " + table.id[i] + ", ";
+            jsonStr += '{"name": "' + table.name[i] + '",  "id": "' + table.id[i] + '", ';
             // add child nodes
             await addJsonNodeChildren(table, i);
             jsonStr += "],"
