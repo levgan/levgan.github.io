@@ -5,7 +5,7 @@ import { Tree } from './tree-master/src/tree.js'
 var jsonStr = "";
 var stopatlevel = 0;
 
-function test() {
+async function test() {
     
     // get html query params
     const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -20,7 +20,7 @@ function test() {
     } else {
         // const tree = new Tree(data2, { parent: document.body })
         // console.log(tree);
-        const jsonTree2 = loadTreeTable();
+        const jsonTree2 = await loadTreeTable();
         console.log("*******************************************");
         console.log(jsonTree2);
         const tree = new Tree(jsonTree2, { parent: document.body })
