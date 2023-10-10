@@ -19,6 +19,7 @@ ready(async () => {
 
 // Data for column mapping fields in Widget GUI
 function getGristOptions() {
+  //     export type GristType = 'Any' | 'Attachments' | 'Blob' | 'Bool' | 'Choice' | 'ChoiceList' | 'Date' | 'DateTime' | 'Id' | 'Int' | 'ManualSortPos' | 'Numeric' | 'PositionNumber' | 'Ref' | 'RefList' | 'Text';
   return [
     {
       name: "name1",
@@ -32,7 +33,7 @@ function getGristOptions() {
       name: "id1",
       title: "Item ID",
       optional: false,
-      type: "ROWID",
+      type: "Int",
       description: "",
       allowMultiple: false
     },
