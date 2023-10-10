@@ -58,6 +58,7 @@ async function loadTreeTable (d) {
     console.log("************************************ load");
     console.log(treeTable);
     var jsonTree = await composeJsonTreeTable(treeTable);
+    jsonTree = JSON.parse(jsonTree);
     return jsonTree;
 }
 
