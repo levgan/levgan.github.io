@@ -60,6 +60,8 @@ async function loadTreeTable (d) {
 
 
 function composeJsonTreeTable(table) {
+    console.log("************************************");
+    console.log(table);
     // add root nodes
     var jsonStr = "{name: root, children[";
     for (var i = 0; i < table.id.length; i++) {
