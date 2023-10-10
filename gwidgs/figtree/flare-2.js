@@ -4,17 +4,17 @@ var data3 = getTreeData3();
 
 async function updConfig (d) {
     const table2 = await grist.getTable();
-    console.log("******current table id: " + await table2.getTableId());
-    console.log("******TABLE:....");
-    console.log(table2);
+    // console.log("******current table id: " + await table2.getTableId());
+    // console.log("******TABLE:....");
+    // console.log(table2);
     const table = await grist.getTable('Z_config');
-    console.log("******table id: " + await table.getTableId())
+    // console.log("******table id: " + await table.getTableId())
     const id1 = (d.length >= 5) ? 1 : 3;
-    console.log(`********d length ${d.length} id1 ${id1}`);
+    // console.log(`********d length ${d.length} id1 ${id1}`);
     const  selID =  { id: 1, "fields":{"id1":id1,"B":d,"C":d+" hello"}};
-    console.log("******selID: " + selID);
+    // console.log("******selID: " + selID);
     await table.update(selID);
-    console.log("******after update");
+    // console.log("******after update");
 }
 
 
@@ -105,7 +105,8 @@ function initD3c() {
             .attr("text-anchor", d => d._children ? "end" : "start")
             .on("click", function (event, d) { 
                 event.stopPropagation();
-                console.log(d.data.name);
+                //.lg. updconfig to set record on table that is linkable with selectby since custom widgets don't seem to be
+                // console.log(d.data.name);
                 updConfig(d.data.name);
             })
             // .on("click", function(d) {

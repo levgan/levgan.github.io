@@ -11,15 +11,15 @@ function test() {
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
     });
-    let data = params.q; // "some_value"
-    console.log(data);
+    let data = params.q; 
+    // console.log(data);
 
     if (data=='1') {
         const tree = new Tree(data1, { parent: document.body })
-        console.log(tree);
+        // console.log(tree);
     } else {
         const tree = new Tree(data2, { parent: document.body })
-        console.log(tree);
+        // console.log(tree);
     }
     
     // tree.expandAll()
@@ -39,7 +39,7 @@ var treeNameClicked = async function(e) {
     // alert(attribute);
     // set record pointer to clicked node to fire onRecord for selectBy
     await grist.setCursorPos({rowId: e.srcElement.id});
-    console.log("Clicked: " + e.srcElement.id);
+    console.log("*****************Clicked: " + e.srcElement.id);
 };
 
 window.onload = function () {
