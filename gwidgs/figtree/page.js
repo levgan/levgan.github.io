@@ -22,7 +22,7 @@ function getGristOptions() {
   return [
     {
       name: "name1",
-      title: "Node Caption",
+      title: "Item Caption",
       optional: false,
       type: "Text",
       description: "",
@@ -30,15 +30,15 @@ function getGristOptions() {
     },
     {
       name: "id1",
-      title: "Node ID",
+      title: "Item ID",
       optional: false,
-      type: "Numeric",
+      type: "ROWID",
       description: "",
       allowMultiple: false
     },
     {
         name: "id2",
-        title: "Parent ID",
+        title: "Item Parent ID",
         optional: false,
         type: "Ref",
         description: "",
