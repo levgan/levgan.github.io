@@ -3,7 +3,7 @@
 import { Tree } from './tree-master/src/tree.js' 
 
 var jsonStr = "";
-
+var stopatlevel = 0;
 
 function test() {
     
@@ -78,6 +78,10 @@ async function composeJsonTreeTable(table) {
 }
 
 async function addJsonNodeChildren(table, parentid) {
+    stopatlevel+=1;
+    if (stopatlevel>3) {
+        return; 
+    }
     jsonStr = jsonStr + "children["
     for (var i = 0; i < table.id.length; i++) {
         if (table.parent_tmp[i] == parentid) {
