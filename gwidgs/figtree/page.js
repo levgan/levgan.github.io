@@ -30,15 +30,7 @@ function getGristOptions() {
       allowMultiple: false
     },
     {
-      name: "id1",
-      title: "Item ID",
-      optional: false,
-      type: "Id",
-      description: "",
-      allowMultiple: false
-    },
-    {
-        name: "id2",
+        name: "pid",
         title: "Item Parent ID",
         optional: false,
         type: "Ref",
@@ -47,6 +39,15 @@ function getGristOptions() {
       }
   ];
 }
+
+// {
+//   name: "id1",
+//   title: "Item ID",
+//   optional: false,
+//   type: "Id",
+//   description: "",
+//   allowMultiple: false
+// },
 
 // let's subscribe to all the events that we need
 async function configureGristSettings() {

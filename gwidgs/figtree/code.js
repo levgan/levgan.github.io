@@ -68,7 +68,7 @@ async function composeJsonTreeTable(table) {
     // add root nodes
     var jsonStr = "{name: root, children[";
     for (var i = 0; i < table.id.length; i++) {
-        jsonStr += "{name: " + table.id1[i] + ",  id: " + table.id1[i] + ", ";
+        jsonStr += "{name: " + table.id[i] + ",  id: " + table.id[i] + ", ";
         // add child nodes
         await addJsonNodeChildren(table, i);
         jsonStr += "}"        
@@ -80,8 +80,8 @@ async function composeJsonTreeTable(table) {
 async function addJsonNodeChildren(table, parentid) {
     jsonStr = jsonStr + "children["
     for (var i = 0; i < table.id.length; i++) {
-        if (table.id2[i] == parentid) {
-            jsonStr += "{name: " + table.id1[i] + ",  id: " + table.id1[i] + ", ";
+        if (table.pid[i] == parentid) {
+            jsonStr += "{name: " + table.name[i] + ",  id: " + table.id[i] + ", ";
             // add child nodes
             await addJsonNodeChildren(table, i);
             jsonStr += "],"
