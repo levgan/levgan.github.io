@@ -23,7 +23,7 @@ function test() {
         const jsonTree2 = loadTreeTable();
         console.log("*******************************************");
         console.log(jsonTree2);
-        // const tree = new Tree(jsonTree2, { parent: document.body })
+        const tree = new Tree(jsonTree2, { parent: document.body })
     }
     
     // tree.expandAll()
