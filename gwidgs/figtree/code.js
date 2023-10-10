@@ -56,7 +56,7 @@ async function loadTreeTable (d) {
     var treeTable = await grist.fetchSelectedTable();
     // var treeTableMapped = grist.mapColumnNames(treeTable, mappings);
     console.log("************************************ load");
-    console.log(treeTableMapped);
+    console.log(treeTable);
     var jsonTree = await composeJsonTreeTable(treeTable);
     return jsonTree;
 }
