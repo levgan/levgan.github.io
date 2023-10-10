@@ -23,7 +23,7 @@ async function test() {
         var jsontree2 = await loadTreeTable();
         console.log("******************************************* jsontree");
         console.log(jsontree2);
-        const tree = new Tree(jsonStr, { parent: document.body })
+        const tree = new Tree(jsontree2, { parent: document.body })
     }
     
     // tree.expandAll()
