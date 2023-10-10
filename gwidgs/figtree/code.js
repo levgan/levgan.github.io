@@ -2,7 +2,7 @@
 
 import { Tree } from './tree-master/src/tree.js' 
 
-
+var jsonStr = "";
 
 
 function test() {
