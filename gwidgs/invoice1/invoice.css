@@ -13,7 +13,7 @@ body {
 .header .title {
   font-size: 300%;
   font-weight: bold;
-  color: #000;
+  /* color: #000; */
 }
 
 .header .meta {
