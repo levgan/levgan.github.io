@@ -41,7 +41,8 @@ body {
   padding: 1px;
   margin-top: 1em;
   margin-bottom: 1em;
-  background: #ff8000;
+  /* background: #ff8000; */
+  background: #4682B4;
   -webkit-print-color-adjust: exact !important;
   color-adjust: exact !important;
 }
@@ -60,6 +61,7 @@ body {
 table.items {
   width: 100%;
   border: 1px solid #ff8000;
+  /* border: 1px solid #4682B4; */
   border-collapse: collapse;
 }
 
