@@ -85,6 +85,10 @@ table.items td {
   padding-bottom: 10px;
 }
 
+.desc {
+  white-space: pre;
+}
+
 .money, .number {
   text-align: right;
 }
