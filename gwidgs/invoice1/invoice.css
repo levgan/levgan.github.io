@@ -6,7 +6,8 @@ body {
 }
 
 .meta {
-  color: #ff8000;
+  /* color: #ff8000; */
+  color: #4682b4;
 }
 
 .header .title {
@@ -60,8 +61,8 @@ body {
 
 table.items {
   width: 100%;
-  border: 1px solid #ff8000;
-  /* border: 1px solid #4682B4; */
+  /* border: 1px solid #ff8000; */
+  border: 1px solid #4682B4;
   border-collapse: collapse;
 }
 
@@ -126,7 +127,8 @@ div.summary .part {
 div.summary .total {
   display: block;
   flex-grow: 1;
-  background: #000080;
+  /* background: #000080; */
+  background: #4682b4;
   font-size: 140%;
 }
 
@@ -162,7 +164,8 @@ div.summary::after {
 
 .thanks {
   text-align: right;
-  color: #C83200;
+  /* color: #C83200; */
+  color:#000;
   font-size: 200%;
 }
 
@@ -187,7 +190,8 @@ div.print {
 }
 
 div.print a {
-  background: #C83200;
+  /* background: #C83200; */
+  background: lightgrey;
   display: block;
   font-size: 200%;
   color: white;
