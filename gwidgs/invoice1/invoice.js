@@ -41,12 +41,12 @@ function addDemo(row) {
   }
   if (!row.Items) {
     row.Items = [
-      {
-        Description: 'Items[0].Description',
-        Quantity: '.Quantity',
-        Total: '.Total',
-        Price: '.Price',
-      },
+      // {
+      //   Description: 'Items[0].Description',
+      //   Quantity: '.Quantity',
+      //   Total: '.Total',
+      //   Price: '.Price',
+      // },
       {
         Description: 'Items[1].Description',
         Quantity: '.Quantity',
