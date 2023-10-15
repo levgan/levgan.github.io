@@ -49,7 +49,7 @@
           <div class="supplier">
             <div v-for="business in (invoice.Invoicer ? [invoice.Invoicer] : [])">
               <template v-if="typeof(business) === 'string'">
-                <div class="address newlined">TEST {{ business }}</div>
+                <div class="address newlined">{{ business }}</div>
               </template>
               <template v-else>
                 <div class="address">
